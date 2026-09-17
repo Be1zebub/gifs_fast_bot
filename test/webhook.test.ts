@@ -168,8 +168,9 @@ describe("webhook", () => {
 		expect(calls[0]?.url).toContain("sendMessage")
 		const payload = parseJsonBody(calls[0]?.init)
 		expect(payload.chat_id).toBe(42)
-		expect(typeof payload.text).toBe("string")
-		expect(String(payload.text).includes("@gifs_fast_bot")).toBe(true)
+		expect(payload.text).toBe(
+			"@gif ищет мимо.\n\nНапиши @gifs_fast_bot котики в любом чате и выбирай гифку.",
+		)
 
 		calls.length = 0
 		const second = createExecutionContext()
