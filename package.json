@@ -1,0 +1,51 @@
+{
+	"name": "gifs-fast-bot",
+	"version": "1.0.0",
+	"private": true,
+	"type": "module",
+	"packageManager": "pnpm@10.34.5",
+	"scripts": {
+		"dev": "wrangler dev",
+		"deploy": "wrangler deploy",
+		"tail": "wrangler tail",
+		"types": "wrangler types",
+		"prepare": "wrangler types",
+		"typecheck": "tsc --noEmit",
+		"test": "vitest run",
+		"test:watch": "vitest",
+		"lint": "eslint src test",
+		"format": "prettier --write .",
+		"format:check": "prettier --check .",
+		"check": "wrangler types && tsc --noEmit && eslint src test && prettier --check . && vitest run"
+	},
+	"devDependencies": {
+		"eslint": "^10.10.0",
+		"prettier": "^3.9.7",
+		"typescript": "^6.0.3",
+		"typescript-eslint": "^8.70.0",
+		"vitest": "^5.0.1",
+		"wrangler": "^4.133.0"
+	},
+	"pnpm": {
+		"onlyBuiltDependencies": [
+			"esbuild",
+			"workerd"
+		]
+	},
+	"cloudflare": {
+		"bindings": {
+			"BOT_TOKEN": {
+				"description": "Token from [@BotFather](https://t.me/BotFather) (`/newbot`)."
+			},
+			"KLIPY_KEY": {
+				"description": "GIF API key from the [KLIPY](https://partner.klipy.com/) partner panel."
+			},
+			"WEBHOOK_SECRET": {
+				"description": "`openssl rand -hex 32`. Reuse it as `secret_token` in `setWebhook`."
+			},
+			"BOT_USERNAME": {
+				"description": "Bot username without `@`. Only used in the `/start` text — change it if this is not `gifs_fast_bot`."
+			}
+		}
+	}
+}

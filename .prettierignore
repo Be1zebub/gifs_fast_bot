@@ -1,0 +1,14 @@
+*
+!/.prettierrc.json
+!/package.json
+!/README.md
+!/tsconfig.json
+!/vitest.config.ts
+!/eslint.config.js
+!/wrangler.jsonc
+!/.github/
+!/.github/**
+!/src/
+!/src/**
+!/test/
+!/test/**

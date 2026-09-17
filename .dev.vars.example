@@ -1,0 +1,4 @@
+# Copy to .dev.vars for `npm run dev`. The Deploy to Cloudflare button prompts for these keys.
+BOT_TOKEN= # @BotFather /newbot
+KLIPY_KEY= # klipy.com partner panel
+WEBHOOK_SECRET= # openssl rand -hex 32
